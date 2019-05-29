@@ -1,7 +1,7 @@
 <template>
   <div class="admin-layout-wrap">
     <el-container :style="{height:'100%'}">
-      <el-aside width="200px"><app-aside /></el-aside>
+      <el-aside width="250px"><app-aside /></el-aside>
       <el-main>
         <nuxt/>
       </el-main>
