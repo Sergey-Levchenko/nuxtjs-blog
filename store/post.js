@@ -14,7 +14,26 @@ export const actions = {
     async remove({ }, id) {
 
     },
-    async update({ }, { id , text }) {
+    async update({ }, { id, text }) {
+
+    },
+    async create({ commit }, { title, text, image }) {
+
+        try {
+            const fd = new FormData();
+            fd.append('title', title);
+            fd.append('text', text);
+            fd.append('image', image, image.name);
+
+            return await new Promise(resolve => {
+                setTimeout(() => {
+                    resolve()
+                }, 500)
+            })
+        } catch (error) {
+            commit('setError', error, { root: true });
+            throw error;
+        }
 
     },
     async fetchAdminById({ }, id) {
